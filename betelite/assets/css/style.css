@@ -1,0 +1,57 @@
+/* BETELITE - Design System Base Stylesheet */
+body {
+    background-color: #020617;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #00FF88;
+}
+
+/* Glassmorphism containers */
+.glass-card {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(30, 41, 59, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.glass-input {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(30, 41, 59, 1) !important;
+    color: #ffffff !important;
+    border-radius: 10px !important;
+}
+
+.glass-input:focus {
+    border-color: #00FF88 !important;
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.15) !important;
+}

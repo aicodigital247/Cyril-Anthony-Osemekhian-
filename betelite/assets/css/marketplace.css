@@ -1,0 +1,25 @@
+/* BETELITE - Tipping Slip Marketplace Grid styling */
+
+.marketplace-badge-vip {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+.marketplace-badge-free {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: #00FF88;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+.slip-detail-badge {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+}

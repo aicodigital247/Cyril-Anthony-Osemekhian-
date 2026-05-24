@@ -1,0 +1,20 @@
+/* BETELITE - Mobile-First Styling Layout Overrides */
+
+@media (max-wmax-width: 768px) {
+    body {
+        padding-bottom: 74px !important; /* Prevent content clipping by bottomnav navigation stack */
+    }
+
+    .glass-card {
+        border-radius: 12px;
+        padding: 16px !important;
+    }
+
+    h1 {
+        font-size: 1.75rem !important;
+    }
+
+    h2 {
+        font-size: 1.25rem !important;
+    }
+}

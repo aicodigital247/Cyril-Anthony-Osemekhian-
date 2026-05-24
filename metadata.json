@@ -1,0 +1,6 @@
+{
+  "name": "BETELITE",
+  "description": "BETELITE is a premium sportsbook prediction marketplace client-server platform featuring live match scorecenters, detailed predictions, wallet transactions, predictor dashboards, and cPanel-ready standard PHP files.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

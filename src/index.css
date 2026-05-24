@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Theme color bindings closely matching Stake and SportyBet Nigeria */
+  --color-darkBg: #020617;
+  --color-darkSec: #0f172a;
+  --color-glassBg: rgba(17, 24, 39, 0.75);
+  --color-borderSl: #1e293b;
+  --color-betGreen: #22c55e;
+  --color-electricGreen: #00FF88;
+  --color-greenHover: #16a34a;
+  --color-vipGold: #f59e0b;
+  --color-dangerRed: #ef4444;
+  --color-mutedText: #94a3b8;
+}
+
+/* Glassmorphism system card elements */
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 41, 59, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 255, 136, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(0, 255, 136, 0.05);
+}
+
+.glass-input {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border: 1px solid rgba(30, 41, 59, 1) !important;
+  color: #ffffff !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-input:focus {
+  border-color: #00FF88 !important;
+  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.15) !important;
+  background: rgba(15, 23, 42, 1) !important;
+}
+
+/* Custom Live match pulses */
+.live-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: #00FF88;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(0, 255, 136, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 255, 136, 0);
+  }
+}

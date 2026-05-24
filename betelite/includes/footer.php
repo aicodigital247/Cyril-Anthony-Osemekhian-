@@ -13,10 +13,10 @@
             <p class="text-xs text-mutedText mt-1"><?php echo SITE_SLOGAN; ?></p>
         </div>
         <div class="flex gap-6 text-sm">
-            <a href="marketplace.php" class="text-mutedText hover:text-white transition-colors">Predictions</a>
-            <a href="live.php" class="text-mutedText hover:text-white transition-colors">Live Scorecenter</a>
-            <a href="wallet.php" class="text-mutedText hover:text-white transition-colors">My Wallet</a>
-            <a href="profile.php" class="text-mutedText hover:text-white transition-colors">VIP Tiers</a>
+            <a href="<?php echo BASE_URL; ?>marketplace.php" class="text-mutedText hover:text-white transition-colors">Predictions</a>
+            <a href="<?php echo BASE_URL; ?>live.php" class="text-mutedText hover:text-white transition-colors">Live Scorecenter</a>
+            <a href="<?php echo BASE_URL; ?>wallet.php" class="text-mutedText hover:text-white transition-colors">My Wallet</a>
+            <a href="<?php echo BASE_URL; ?>profile.php" class="text-mutedText hover:text-white transition-colors">VIP Tiers</a>
         </div>
         <div class="text-xs text-mutedText">
          © 2026 BETELITE. Licensed in Nigeria with simulated high variance sportsbook prediction pools.
@@ -39,7 +39,7 @@
 </script>
 
 <!-- Global Script handler to handle cart counters and balance updates dynamically -->
-<script src="assets/js/app.js"></script>
+<script src="<?php echo BASE_URL; ?>assets/js/app.js"></script>
 
 </body>
 </html>

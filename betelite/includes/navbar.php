@@ -27,14 +27,14 @@ if (isset($_SESSION['user_id'])) {
 
         <!-- Desktop Navigation Items -->
         <div class="hidden md:flex items-center gap-6">
-            <a href="marketplace.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors <?php echo ($current_page === 'marketplace.php') ? 'text-electricGreen border-b-2 border-electricGreen' : ''; ?>">
+            <a href="<?php echo BASE_URL; ?>marketplace.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors <?php echo ($current_page === 'marketplace.php') ? 'text-electricGreen border-b-2 border-electricGreen' : ''; ?>">
                 Marketplace
             </a>
-            <a href="live.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors flex items-center gap-1.5 <?php echo ($current_page === 'live.php') ? 'text-electricGreen' : ''; ?>">
+            <a href="<?php echo BASE_URL; ?>live.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors flex items-center gap-1.5 <?php echo ($current_page === 'live.php') ? 'text-electricGreen' : ''; ?>">
                 <span class="live-pulse"></span>
                 Live Matches
             </a>
-            <a href="wallet.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors <?php echo ($current_page === 'wallet.php') ? 'text-electricGreen border-b-2 border-electricGreen' : ''; ?>">
+            <a href="<?php echo BASE_URL; ?>wallet.php" class="text-sm font-medium no-underline text-mutedText hover:text-white transition-colors <?php echo ($current_page === 'wallet.php') ? 'text-electricGreen border-b-2 border-electricGreen' : ''; ?>">
                 Wallet System
             </a>
         </div>
@@ -44,14 +44,14 @@ if (isset($_SESSION['user_id'])) {
     <div class="flex items-center gap-3">
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- User online balance -->
-            <a href="wallet.php" class="flex items-center gap-2 px-3 py-1.5 bg-darkSec border border-borderSl rounded-full text-xs font-semibold hover:border-electricGreen transition-all no-underline text-white">
+            <a href="<?php echo BASE_URL; ?>wallet.php" class="flex items-center gap-2 px-3 py-1.5 bg-darkSec border border-borderSl rounded-full text-xs font-semibold hover:border-electricGreen transition-all no-underline text-white">
                 <span class="text-mutedText"><?php echo CURRENCY_SYMBOL; ?></span>
                 <span id="nav-wallet-balance" class="text-electricGreen"><?php echo number_format(get_wallet_balance($conn, $_SESSION['user_id']), 2); ?></span>
                 <i data-lucide="plus-circle" class="w-4 h-4 text-electricGreen"></i>
             </a>
 
             <!-- Cart Badge -->
-            <a href="cart.php" class="relative p-2 text-mutedText hover:text-white transition-colors no-underline">
+            <a href="<?php echo BASE_URL; ?>cart.php" class="relative p-2 text-mutedText hover:text-white transition-colors no-underline">
                 <i data-lucide="shopping-cart" class="w-5 h-5"></i>
                 <?php if ($cart_count > 0): ?>
                     <span id="cart-counter-badge" class="absolute -top-1 -right-1 bg-dangerRed text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
@@ -67,26 +67,26 @@ if (isset($_SESSION['user_id'])) {
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark bg-slate-900 border border-slate-800 p-2 rounded-xl mt-2 w-52" aria-labelledby="profileDropdown">
                     <li><h6 class="dropdown-header text-mutedText px-3 py-1 text-xs uppercase tracking-wider">Hi, @<?php echo $_SESSION['username']; ?></h6></li>
-                    <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="dashboard.php"><i data-lucide="layout-dashboard" class="w-4 h-4 inline mr-2 text-electricGreen"></i> My Tickets</a></li>
+                    <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="<?php echo BASE_URL; ?>dashboard.php"><i data-lucide="layout-dashboard" class="w-4 h-4 inline mr-2 text-electricGreen"></i> My Tickets</a></li>
                     
                     <?php if ($_SESSION['user_role'] === 'predictor' || $_SESSION['user_role'] === 'admin'): ?>
                         <li><hr class="dropdown-divider border-slate-800"></li>
-                        <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="predictor/dashboard.php"><i data-lucide="shield-alert" class="w-4 h-4 inline mr-2 text-vipGold"></i> Predictor Studio</a></li>
+                        <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="<?php echo BASE_URL; ?>predictor/dashboard.php"><i data-lucide="shield-alert" class="w-4 h-4 inline mr-2 text-vipGold"></i> Predictor Studio</a></li>
                     <?php endif; ?>
 
                     <?php if ($_SESSION['user_role'] === 'admin'): ?>
-                        <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="admin/index.php"><i data-lucide="lock" class="w-4 h-4 inline mr-2 text-dangerRed"></i> Supreme Admin</a></li>
+                        <li><a class="dropdown-item rounded-lg py-2 text-sm text-white hover:bg-slate-800" href="<?php echo BASE_URL; ?>admin/index.php"><i data-lucide="lock" class="w-4 h-4 inline mr-2 text-dangerRed"></i> Supreme Admin</a></li>
                     <?php endif; ?>
 
                     <li><hr class="dropdown-divider border-slate-800"></li>
-                    <li><a class="dropdown-item rounded-lg py-2 text-sm text-dangerRed hover:bg-slate-800/55" href="api/logout.php"><i data-lucide="log-out" class="w-4 h-4 inline mr-2"></i> Sign Out</a></li>
+                    <li><a class="dropdown-item rounded-lg py-2 text-sm text-dangerRed hover:bg-slate-800/55" href="<?php echo BASE_URL; ?>api/logout.php"><i data-lucide="log-out" class="w-4 h-4 inline mr-2"></i> Sign Out</a></li>
                 </ul>
             </div>
         <?php else: ?>
-            <a href="login.php" class="text-xs font-semibold py-2 px-4 border border-borderSl rounded-lg hover:border-white text-white no-underline transition-all">
+            <a href="<?php echo BASE_URL; ?>login.php" class="text-xs font-semibold py-2 px-4 border border-borderSl rounded-lg hover:border-white text-white no-underline transition-all">
                 Login
             </a>
-            <a href="register.php" class="text-xs font-semibold py-2 px-4 bg-electricGreen hover:bg-greenHover rounded-lg text-darkBg no-underline transition-all">
+            <a href="<?php echo BASE_URL; ?>register.php" class="text-xs font-semibold py-2 px-4 bg-electricGreen hover:bg-greenHover rounded-lg text-darkBg no-underline transition-all">
                 Join VIP
             </a>
         <?php endif; ?>
